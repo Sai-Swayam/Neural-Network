@@ -70,7 +70,8 @@ button {
 }
 
 .board {
-    height: 14rem;
+    height: 24rem;
+    width: 44rem;
 }
 
 .buttons {
@@ -78,12 +79,23 @@ button {
     gap: 2rem;
 }
 
-.node {
-    height: 2rem;
-    width: 2rem;
+.layer {
+    height: 100%;
+    width: 4rem;
     border: 1px solid yellow;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
+
+.button_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* Media Queries */
 
 /* xs */
 @media (min-width: 475px) {

@@ -15,3 +15,7 @@
     transform: translateY(3px);
     box-shadow: 0 10px 20px rgb(225, 29, 72, 0.5), 0 6px 6px rgb(225, 29, 72, 0.5), 0 0 100px -10px var(--clr-rose);
 }
+
+.btn-s {
+    
+}

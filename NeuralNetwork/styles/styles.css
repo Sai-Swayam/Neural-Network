@@ -70,7 +70,7 @@ button {
 }
 
 .board {
-    height: 24rem;
+    height: 32rem;
     width: 44rem;
 }
 
@@ -84,9 +84,11 @@ button {
     width: 4rem;
     border: 1px solid yellow;
     text-align: center;
+    /* justify-content: space-between; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.7rem;
 }
 
 .button_container {
@@ -96,8 +98,8 @@ button {
 
 .node {
     border: 1px solid yellow;
-    height: 3rem;
-    width: 3rem;
+    height: 2.4rem;
+    width: 2.4rem;
 
 }
 

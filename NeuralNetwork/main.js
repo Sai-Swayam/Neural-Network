@@ -33,6 +33,7 @@ add.addEventListener("click", () => {
       </div>
     `;
     layer.nodes = new Array();
+    layer.j = 0;
     graph.appendChild(layer);
     layers.push(layer);
   }
@@ -55,14 +56,15 @@ check.addEventListener("click", () => {
 
 document.querySelector("#graph").addEventListener("click", (e) => {
   let btn_s = e.target.closest("button");
-  // console.log(addBtn);
   if (btn_s.id.startsWith("add")) {
-    console.log("add", btn_s.id);
-    let layer = document.getElementById(`${i}`); 
-    let node = document.createElement("div");
-    node.className = "node";
-    layer.appendChild(node);
-    layer.nodes.push(node);
+    let layer = e.target.closest("div").parentNode;
+    if (layer.j < 8) {
+      layer.j++;
+      let node = document.createElement("div");
+      node.className = "node";
+      layer.appendChild(node);
+      layer.nodes.push(node);
+    }
   } else if (btn_s.id.startsWith("rem")) {
     console.log("remove", btn_s.id);
   }

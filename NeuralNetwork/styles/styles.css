@@ -86,6 +86,7 @@ button {
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .button_container {
@@ -93,6 +94,12 @@ button {
     justify-content: space-around;
 }
 
+.node {
+    border: 1px solid yellow;
+    height: 3rem;
+    width: 3rem;
+
+}
 
 
 /* Media Queries */

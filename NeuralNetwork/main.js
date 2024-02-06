@@ -16,7 +16,7 @@ add.addEventListener("click", () => {
     layer.id = `${i}`;
     layer.innerHTML = `
       <div class="button_container">
-        <button class="btn-s">
+        <button class="btn-s" id="add-${i}">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" width="1.5rem">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -24,7 +24,7 @@ add.addEventListener("click", () => {
           </svg>
 
         </button>
-        <button class="btn-s">
+        <button class="btn-s" id="rem-${i}">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" width="1.5rem">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -32,6 +32,7 @@ add.addEventListener("click", () => {
         </button>
       </div>
     `;
+    layer.nodes = new Array();
     graph.appendChild(layer);
     layers.push(layer);
   }
@@ -42,7 +43,7 @@ remove.addEventListener("click", () => {
   let layer = document.getElementById(`${i}`);
   if (i > 0) {
     graph.removeChild(layer);
-    layers.pop;
+    layers.pop();
     i--;
   }
 });
@@ -50,4 +51,23 @@ remove.addEventListener("click", () => {
 const check = document.getElementById("check");
 check.addEventListener("click", () => {
   console.log(layers);
+});
+
+document.querySelector("#graph").addEventListener("click", (e) => {
+  let btn_s = e.target.closest("button");
+  // console.log(addBtn);
+  if (btn_s.id.startsWith("add")) {
+    console.log("add", btn_s.id);
+    let layer = document.getElementById(`${i}`); 
+    let node = document.createElement("div");
+    node.className = "node";
+    layer.appendChild(node);
+    layer.nodes.push(node);
+  } else if (btn_s.id.startsWith("rem")) {
+    console.log("remove", btn_s.id);
+  }
+  // addBtn.addEventListener("click", () => {
+  //   console.log("add");
+
+  // });
 });

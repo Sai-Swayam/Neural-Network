@@ -62,14 +62,17 @@ document.querySelector("#graph").addEventListener("click", (e) => {
       layer.j++;
       let node = document.createElement("div");
       node.className = "node";
+      node.id = `node-${layer.j}`;
       layer.appendChild(node);
       layer.nodes.push(node);
     }
   } else if (btn_s.id.startsWith("rem")) {
-    console.log("remove", btn_s.id);
+    let layer = e.target.closest("div").parentNode;
+    if (layer.j > 0) {
+      let node = document.getElementById(`node-${layer.j}`);
+      layer.removeChild(node);
+      layer.nodes.pop();
+      layer.j--;
+    }
   }
-  // addBtn.addEventListener("click", () => {
-  //   console.log("add");
-
-  // });
 });
